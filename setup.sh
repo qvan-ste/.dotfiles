@@ -23,8 +23,8 @@ if [[ -f "$HOME/.zshrc" ]]; then
     mv "$HOME/.zshrc" "$HOME/.zshrc.backup"
 fi
 
-if !([[ -f "$HOME/.zhistory" ]]); then
-    touch $HOME/.zhistory
+if !([[ -f "$HOME/.zsh_history" ]]); then
+    touch $HOME/.zsh_history
 fi
 ln -s "$TARGET/zsh/.zshrc" "$HOME/.zshrc"
 
