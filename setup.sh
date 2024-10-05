@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TARGET="$HOME/dotfiles/"
+TARGET="$HOME/dotfiles"
 
 # Check requirements
 if !([[ "$SHELL" == *"/zsh" ]]); then
