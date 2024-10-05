@@ -24,6 +24,7 @@ if [[ -f "$HOME/.zshrc" ]]; then
 fi
 
 ln -s "$TARGET/zsh/.zshrc" "$HOME/.zshrc"
+ln -s "$TARGET/tmux/.tmux.conf" "$HOME/.tmux.conf"
 
 echo "Symlink created: $HOME/.zshrc -> $TARGET"
 exec $SHELL -l

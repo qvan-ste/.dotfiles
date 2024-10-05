@@ -6,6 +6,7 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 export DOTFILES="$HOME/.dotfiles"
 export STARSHIP_CONFIG="$HOME/.dotfiles/zsh/starship.toml"
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # Zsh options
 setopt AUTO_CD
@@ -20,11 +21,15 @@ setopt INTERACTIVE_COMMENTS
 setopt MENU_COMPLETE
 setopt AUTO_LIST
 
-# Load completion system
+# Auto completion
 autoload -Uz compinit
 compinit
+compdef _git git
 
-# Completion options
+# Auto completion settings
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' format '%B%d%b'
+zstyle ':completion:*' list-colors 'di=34:fi=0'
 zstyle ':completion:*' menu select
 zstyle ':completion:*' complete-options true
 zstyle ':completion:*' file-sort modification
@@ -39,4 +44,3 @@ source $DOTFILES/zsh/aliases/git.aliases.sh
 source $HOME/.dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(starship init zsh)"
-
