@@ -39,3 +39,6 @@ source $DOTFILES/zsh/plugins/zsh-syntax-highlighting.zsh
 source $DOTFILES/zsh/aliases/tmux.aliases.sh
 source $DOTFILES/zsh/aliases/git.aliases.sh
 
+# Enable Starship
+eval "$(starship init zsh)"
+
