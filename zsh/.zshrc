@@ -35,6 +35,8 @@ _comp_options+=(globdots)
 source $DOTFILES/zsh/aliases/tmux.aliases.sh
 source $DOTFILES/zsh/aliases/git.aliases.sh
 
-# Enable Starship
+# Plugins
+source $HOME/.dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(starship init zsh)"
 
