@@ -25,6 +25,7 @@ fi
 
 ln -s "$TARGET/zsh/.zshrc" "$HOME/.zshrc"
 ln -s "$TARGET/tmux/.tmux.conf" "$HOME/.tmux.conf"
+ln -s "$TARGET/vim/.vimrc" "$HOME/.vimrc"
+ln -s "$$TARGET/vim/.vim" "$HOME/.vim"
 
-echo "Symlink created: $HOME/.zshrc -> $TARGET"
 exec $SHELL -l

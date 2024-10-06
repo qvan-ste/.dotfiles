@@ -20,6 +20,7 @@ setopt HIST_SAVE_NO_DUPS
 setopt INTERACTIVE_COMMENTS
 setopt MENU_COMPLETE
 setopt AUTO_LIST
+setopt LIST_PACKED
 
 # Auto completion
 autoload -Uz compinit
@@ -34,6 +35,8 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' complete-options true
 zstyle ':completion:*' file-sort modification
 zstyle ':completion:*' use-cache on
+zstyle ':completion:*' completer _extensions _complete _approximate
+zstyle ':completion:*' group-name ''
 _comp_options+=(globdots)
 
 # Aliases
@@ -44,3 +47,7 @@ source $DOTFILES/zsh/aliases/git.aliases.sh
 source $HOME/.dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(starship init zsh)"
+
+# Keybindings
+bindkey "\e[B" expand-or-complete
+bindkey '^I' autosuggest-accept
