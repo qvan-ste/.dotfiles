@@ -6,11 +6,13 @@ set wildmenu
 set lazyredraw
 set showmatch
 set ruler
-set visualbell
+set belloff=all
 set tabstop=4
 set autoindent
 set smartindent
 set incsearch
 set hlsearch
+set t_Co=256
 set termguicolors
-add colorscheme catppuccin_mocha
+syntax enable
+colorscheme catppuccin_mocha
