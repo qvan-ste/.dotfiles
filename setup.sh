@@ -8,15 +8,6 @@ if !([[ "$SHELL" == *"/zsh" ]]); then
 	exit 1
 fi
 
-if !command -v curl &> /dev/null; then
-    echo "Please install curl"
-	exit 1
-fi
-
-
-# Install starship
-curl -sS https://starship.rs/install.sh | sh
-
 # Set config files
 if [[ -f "$HOME/.zshrc" ]]; then
     echo "Removing existing .zshrc file in home directory."
