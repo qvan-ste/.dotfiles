@@ -8,10 +8,10 @@ fi
 # Environment variables
 export EDITOR="vim"
 export VISUAL="vim"
-export HISTFILE="~/.zsh_history" 
+export HISTFILE="$HOME/.zsh_history" 
 export HISTSIZE=10000
 export SAVEHIST=10000
-export DOTFILES="~/.dotfiles"
+export DOTFILES="$HOME/.dotfiles"
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # Zsh options
@@ -50,9 +50,9 @@ source $DOTFILES/zsh/aliases/tmux.aliases.sh
 source $DOTFILES/zsh/aliases/git.aliases.sh
 
 # Plugins
-source ~/.dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+source $HOME/.dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/powerlevel10k/powerlevel10k.zsh-theme
 
 # Keybindings
 bindkey "\e[B" expand-or-complete
