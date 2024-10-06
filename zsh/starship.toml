@@ -93,6 +93,7 @@ symbol = " "
 symbol = " "
 
 [hostname]
+format = "on [$ssh_symbol$hostname ](flamingo)" 
 ssh_symbol = " "
 
 [java]
@@ -199,6 +200,9 @@ symbol = " "
 
 [swift]
 symbol = " "
+
+[username]
+format = "[$user](yellow) "
 
 [zig]
 symbol = " "
