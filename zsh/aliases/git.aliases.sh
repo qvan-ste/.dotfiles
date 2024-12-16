@@ -62,6 +62,9 @@ if command -v git &>/dev/null; then
   # the commit history on the left hand side of the output.
   alias glg='git log --oneline --graph --full-history --all --color --decorate'
 
+  # Show status
+  alias gst='git status'
+
   # Show various types of objects.
   alias gsh='git show'
   
