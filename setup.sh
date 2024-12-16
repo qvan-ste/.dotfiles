@@ -19,5 +19,6 @@ ln -s "$TARGET/zsh/plugins/.p10k.zsh" "$HOME/.p10k.zsh"
 ln -s "$TARGET/tmux/.tmux.conf" "$HOME/.tmux.conf"
 ln -s "$TARGET/vim/.vimrc" "$HOME/.vimrc"
 ln -s "$TARGET/vim/.vim" "$HOME/.vim"
+ln -s "$TARGET/fish/" "$HOME/.config/fish"
 
 exec $SHELL -l
