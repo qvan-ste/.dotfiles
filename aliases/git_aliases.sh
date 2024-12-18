@@ -96,7 +96,7 @@
   alias gp='git pull'
 
   # Update remote refs along with associated objects.
-  alias gph='git push'
+  alias gps='git push'
 
   # Commit command to automatically "add" changes from all known files.
   alias gc='git commit -a'

@@ -20,11 +20,18 @@ if status is-interactive
     # Remove greeting
     set -g fish_greeting
 
-    # Add Homebrew enviroment variables
+    # Add path environment variables
     if test -d /opt/homebrew
         eval "$(/opt/homebrew/bin/brew shellenv)"
     end
 
+    if test -f ~/.bun/_bun
+        if not command -v bun &>/dev/null
+            source ~/.bun/_bun
+            fish_add_path "$HOME/.bun/bin"
+        end
+    end
+    
     # Add aliases
     if command -v git &>/dev/null
         source  $HOME/.dotfiles/aliases/git_aliases.sh
