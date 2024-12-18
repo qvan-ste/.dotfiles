@@ -4,9 +4,7 @@ function fish_prompt --description 'Write out the prompt'
 	set -q fish_prompt_pwd_dir_length
 	or set -lx fish_prompt_pwd_dir_length 0
 
-	set status_color $rosewater
-
-	set status_color $rosewater
+	set status_color $mauve
 	if test $exit_code -ne 0
 		set status_color $red
 	end

@@ -1,5 +1,4 @@
-if command -v git >/dev/null
-  # Start tmux.
+ # Start tmux.
   alias tm='tmux'
 
   # Attach to a tmux session.
@@ -22,4 +21,3 @@ if command -v git >/dev/null
 
   # Start a new tmux session.
   alias tms='tmux new-session -s'
-end

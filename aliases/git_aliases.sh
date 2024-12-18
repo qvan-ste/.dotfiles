@@ -1,13 +1,4 @@
-#!/usr/bin/env bash
-
-# 🅳🅾🆃🅵🅸🅻🅴🆂 (v0.2.468) - <https://dotfiles.io>
-# Made with ♥ in London, UK by @wwdseb
-# Copyright (c) 2015-2024. All rights reserved
-# License: MIT
-
-if command -v git &>/dev/null; then
-
-  # Short-form git commands.
+# Short-form git commands.
   alias g='git'
 
   # Add file contents to the index.
@@ -178,5 +169,3 @@ if command -v git &>/dev/null; then
 
   # Remove files from the working tree and from the index.
   alias grm='git rm'
-
-fi
