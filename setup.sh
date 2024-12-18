@@ -3,22 +3,38 @@
 TARGET="$HOME/.dotfiles"
 
 # Check requirements
-if !([[ "$SHELL" == *"/zsh" ]]); then
-    echo "Set default shell to zsh with chsh -s /bin/zsh"
+if !([[ "$SHELL" == *"/fish" ]]); then
+    echo "Set default shell to fish with chsh -s /bin/fish"
 	exit 1
 fi
 
-# Set config files
-if [[ -f "$HOME/.zshrc" ]]; then
-    echo "Removing existing .zshrc file in home directory."
-    mv "$HOME/.zshrc" "$HOME/.zshrc.backup"
-fi
+create_symlink() {
+    local target_file=$1
+    local symlink=$2
+    
+    if [[ -f "$symlink" ]]; then
+        echo "File $symlink exists. Backing it up to ${symlink}.backup"
+        mv "$symlink" "${symlink}.backup"
+    fi
 
-ln -s "$TARGET/zsh/.zshrc" "$HOME/.zshrc"
-ln -s "$TARGET/zsh/plugins/.p10k.zsh" "$HOME/.p10k.zsh" 
-ln -s "$TARGET/tmux/.tmux.conf" "$HOME/.tmux.conf"
-ln -s "$TARGET/vim/.vimrc" "$HOME/.vimrc"
-ln -s "$TARGET/vim/.vim" "$HOME/.vim"
-ln -s "$TARGET/fish/" "$HOME/.config/fish"
+    echo "Creating symlink from $target_file to $symlink"
+    ln -s "$target_file" "$symlink"
+}
+
+# .zshrc
+create_symlink "$TARGET/zsh/.zshrc" "$HOME/.zshrc"
+
+# .tmux.conf
+create_symlink "$TARGET/tmux/.tmux.conf" "$HOME/.tmux.conf"
+
+# .vimrc
+create_symlink "$TARGET/vim/.vimrc" "$HOME/.vimrc"
+
+# .vim
+create_symlink "$TARGET/vim/.vim" "$HOME/.vim"
+
+# fish config
+create_symlink "$TARGET/fish/" "$HOME/.config/fish"
+
 
 exec $SHELL -l
