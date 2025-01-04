@@ -18,7 +18,7 @@ if status is-interactive
     set fish_color_param normal
 
     # Remove greeting
-    set -g fish_greeting
+    set -u fish_greeting
 
     # Add app environment variables
     if test -d /opt/homebrew
