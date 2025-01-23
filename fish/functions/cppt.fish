@@ -1,6 +1,6 @@
 function cppt
     if test (count $argv) -ne 2
-        echo "usage: cpptemp {dir} {project}" >&2
+        echo "usage: cppt {dir} {project}" >&2
         return 1
     end
 
