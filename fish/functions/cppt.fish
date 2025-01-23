@@ -11,7 +11,7 @@ function cppt
     cd $dir
 
     touch "$project.cpp"
-	touch "$project.h"
+	touch "$project.hpp"
     
     echo "RED = \033[0;31m
 ORANGE = \033[0;33m
