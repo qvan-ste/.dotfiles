@@ -146,7 +146,7 @@ alias gcom='git checkout main && git fetch origin --prune && git reset --hard or
 
 # Publish the current branch by pushing it to the remote "origin", and
 # setting the current branch to track the upstream branch.
-alias gpb='git push --set-upstream origin $(git current-branch)'
+# alias gpb='git push --set-upstream origin $(git current-branch)'
 
 # Push local changes to the online repository.
 alias gpo='git push origin'

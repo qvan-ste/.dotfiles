@@ -1,18 +1,30 @@
-function cppt
+function cppp
+    # Assert correct usage 
     if test (count $argv) -ne 2
-        echo "usage: cppt {dir} {project}" >&2
+        echo "usage: cppp {dir} {project}" >&2
         return 1
     end
 
     set dir $argv[1]
     set project $argv[2]
 
-    mkdir -p $dir
+    # Create directory if it doesn't exist
+    if test ! -d $dir
+        mkdir -p $dir
+    end
     cd $dir
 
-    touch "$project.cpp"
-	touch "$project.hpp"
-    
+    # Create project file if it doesn't exist and add template
+    if test ! -e "$project.cpp"
+        touch "$project.cpp"
+        echo "int main (void) {
+}
+" > $project.cpp
+    end
+
+   # Create Makefile if it doesn't exist and add template
+    if test ! -e Makefile
+        touch Makefile
     echo "RED = \033[0;31m
 ORANGE = \033[0;33m
 GREEN = \033[0;32m
@@ -46,5 +58,6 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re .cpp.o" > Makefile
+    end
 
-end
+end 
