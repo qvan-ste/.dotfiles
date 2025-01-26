@@ -30,8 +30,8 @@ ORANGE = \033[0;33m
 GREEN = \033[0;32m
 NO_COLOUR = \033[0m
 
-CFILES = $project.cpp
-OFILES = \$(CFILES:.cpp=.o)
+CPPFILES = $project.cpp
+OFILES = \$(CPPFILES:.cpp=.o)
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++20
 

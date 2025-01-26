@@ -20,7 +20,7 @@ if status is-interactive
     # Remove greeting
     set -u fish_greeting
 
-    # Add app environment variables
+    Add app environment variables
     if test -d /opt/homebrew
         eval "$(/opt/homebrew/bin/brew shellenv)"
     end

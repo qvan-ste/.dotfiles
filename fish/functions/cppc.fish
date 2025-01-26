@@ -14,7 +14,8 @@ function cppc
 	end
 
     set classDeclaration "class $className {
-
+   public:
+	$className();
 };"
 	set headerFile $className.hpp
 	
@@ -26,6 +27,7 @@ function cppc
 	# Add template to class file
 	echo "#include \"$headerFile\"
 
+$className::$className(){}
 " > $classFile
 
 end
