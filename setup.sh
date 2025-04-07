@@ -57,22 +57,26 @@ create_symlink "$TARGET/fish/" "$HOME/.config/fish"
 echo "Setting Fish universal variables..."
 
 # Catpuccin colours
-fish -c set -U red (set_color F38BA8)
-fish -c set -U blue (set_color 89B4FA)
-fish -c set -U grey (set_color 7F849C)
-fish -c set -U dark_grey (set_color 6C6F85)
-fish -c set -U mauve (set_color CBA6F7)
+fish -c 'set -U red (set_color F38BA8)'
+fish -c 'set -U blue (set_color 89B4FA)'
+fish -c 'set -U grey (set_color 7F849C)'
+fish -c 'set -U dark_grey (set_color 6C6F85)'
+fish -c 'set -U mauve (set_color CBA6F7)'
 
 # Prompt settings
-fish -c set -U __fish_git_prompt_showupstream 'yes'
-fish -c set -U __fish_git_prompt_char_upstream_ahead \$blue' '
-fish -c set -U __fish_git_prompt_char_upstream_behind \$red' '
-fish -c set -U __fish_git_prompt_char_upstream_diverged \$blue' '
-fish -c set -U __fish_git_prompt_char_upstream_equal ''
+fish -c 'set -U __fish_git_prompt_showupstream 'yes''
+fish -c 'set -U __fish_git_prompt_char_upstream_ahead \$blue' ''
+fish -c 'set -U __fish_git_prompt_char_upstream_behind \$red' ''
+fish -c 'set -U __fish_git_prompt_char_upstream_diverged \$blue' ''
+fish -c 'set -U __fish_git_prompt_char_upstream_equal '''
 
 # Default colours
-fish -c set -U fish_color_command green
-fish -c set -U fish_color_param normal
+fish -c 'set -U fish_color_command green'
+fish -c 'set -U fish_color_param normal'
+
+# Default editor
+fish -c 'set -U EDITOR vim'
+fish -c 'set -U VISUAL vim'
 
 # Fish greeting
 set -U fish_greeting
