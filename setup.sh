@@ -8,7 +8,7 @@ if [ ! -d "$TARGET" ]; then
 fi
 
 # Check requirements
-if !([[ "$SHELL" == *"/fish" ]]); then
+if !([[ "$SHELL" == *"fish" ]]); then
     echo "Set default shell to fish with chsh -s /bin/fish"
 	exit 1
 fi
@@ -79,6 +79,6 @@ fish -c 'set -U EDITOR vim'
 fish -c 'set -U VISUAL vim'
 
 # Fish greeting
-set -U fish_greeting
+fish -c 'set -U fish_greeting'
 
 exec $SHELL -l
