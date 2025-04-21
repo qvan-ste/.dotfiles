@@ -2,15 +2,15 @@
 
 TARGET="$HOME/.dotfiles"
 
+# Check requirements
+if ! command -v fish &>/dev/null; then
+    echo "Error: fish shell is not installed. Please install it first."
+    exit 1
+fi
+
 if [ ! -d "$TARGET" ]; then
     echo "Directory $TARGET does not exist. Creating it now."
     mkdir -p "$TARGET"
-fi
-
-# Check requirements
-if !([[ "$SHELL" == *"fish" ]]); then
-    echo "Set default shell to fish with chsh -s /bin/fish"
-	exit 1
 fi
 
 create_symlink() {
