@@ -81,4 +81,3 @@ fish -c 'set -U VISUAL vim'
 # Fish greeting
 fish -c 'set -U fish_greeting'
 
-exec $SHELL -l
