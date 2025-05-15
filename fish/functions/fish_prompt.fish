@@ -1,13 +1,13 @@
 function fish_prompt --description 'Write out the prompt'
-	set exit_code $status
+	set -l exit_code $status
 
 	# Always show full path
 	set -q fish_prompt_pwd_dir_length
 	or set -lx fish_prompt_pwd_dir_length 0
 
-	set status_color $mauve
+	set -l status_color $mauve
 	if test $exit_code -ne 0
-		set status_color $red
+		set -l status_color $red
 	end
 
 	function git_prompt
