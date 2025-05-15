@@ -1,6 +1,7 @@
 function fish_prompt --description 'Write out the prompt'
 	set exit_code $status
 
+	# Always show full path
 	set -q fish_prompt_pwd_dir_length
 	or set -lx fish_prompt_pwd_dir_length 0
 
@@ -10,12 +11,13 @@ function fish_prompt --description 'Write out the prompt'
 	end
 
 	function git_prompt
+		# Remove the '()' around the branch name 
 		set git_status (string sub -s 3 -e -1 (fish_git_prompt))
 		if test (string length $git_status)
 			echo $dark_grey " $git_status"
 		end
 	end
 
-	echo -s $blue  (prompt_pwd) (git_prompt)
+	echo -s $blue  (prompt_pwd)(git_prompt)
 	echo -n -s $status_color ❯ ' '
 end
