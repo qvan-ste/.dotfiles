@@ -65,9 +65,9 @@ fish -c 'set -U mauve (set_color CBA6F7)'
 
 # Prompt settings
 fish -c 'set -U __fish_git_prompt_showupstream 'yes''
-fish -c 'set -U __fish_git_prompt_char_upstream_ahead \$blue' ''
-fish -c 'set -U __fish_git_prompt_char_upstream_behind \$red' ''
-fish -c 'set -U __fish_git_prompt_char_upstream_diverged \$blue' ''
+fish -c 'set -U __fish_git_prompt_char_upstream_ahead $blue' ''
+fish -c 'set -U __fish_git_prompt_char_upstream_behind $red' ''
+fish -c 'set -U __fish_git_prompt_char_upstream_diverged $blue' ''
 fish -c 'set -U __fish_git_prompt_char_upstream_equal '''
 
 # Default colours
