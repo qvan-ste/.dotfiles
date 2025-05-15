@@ -9,15 +9,13 @@ function fish_prompt --description 'Write out the prompt'
 		set status_color $red
 	end
 
-   function git_prompt
+	function git_prompt
 		set git_status (string sub -s 3 -e -1 (fish_git_prompt))
 		if test (string length $git_status)
 			echo $dark_grey " $git_status"
-		else
-			echo ""
 		end
 	end
 
-	echo -s $blue (prompt_pwd) (git_prompt)
+	echo -s $blue  (prompt_pwd) (git_prompt)
 	echo -n -s $status_color ❯ ' '
 end

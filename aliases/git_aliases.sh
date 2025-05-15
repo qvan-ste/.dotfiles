@@ -144,6 +144,8 @@ alias gcode='git checkout main && git branch --merged | xargs git branch --delet
 # Ensure local is like the main branch.
 alias gcom='git checkout main && git fetch origin --prune && git reset --hard origin/main'
 
+alias gcoma='git checkout master && git fetch origin --prune && git reset --hard origin/master'
+
 # Publish the current branch by pushing it to the remote "origin", and
 # setting the current branch to track the upstream branch.
 alias gpb='git push --set-upstream origin $(git current-branch)'
