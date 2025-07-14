@@ -1,16 +1,3 @@
-# Suppress zsh warning message
-export BASH_SILENCE_DEPRECATION_WARNING=1
-export HISTSIZE=10000
-export HISTFILESIZE=20000
-# Ignore duplicate commands
-export HISTCONTROL=ignoredups:erasedups
-
-# Default editor
-export EDITOR="vim"
-export VISUAL="vim"
-
-# Prompt
-export PS1='\[\033[32m\]\u@\h\[\033[0m\] \[\033[34m\]\w\[\033[0m\]\n\[\033[1;35m\]>\[\033[0m\] '
 # Append commands to history
 shopt -s histappend
 # Case-insensitive completion
@@ -24,7 +11,10 @@ bind 'TAB:menu-complete'
 # Shift+Tab to cycle backwards
 bind '"\e[Z":menu-complete-backward'
 
+source $HOME/.dotfiles/bash/config/environment.sh
+
 # Aliases
+source $HOME/.dotfiles/aliases/shell_colours.sh
 if command -v git &> /dev/null && [ -f "$HOME/.dotfiles/aliases/git_aliases.sh" ]; then
     source "$HOME/.dotfiles/aliases/git_aliases.sh"
 fi

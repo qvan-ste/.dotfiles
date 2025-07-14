@@ -4,6 +4,7 @@ source $HOME/.dotfiles/zsh/config/options.zsh
 source $HOME/.dotfiles/zsh/config/autocompletion.zsh
 
 # Aliases
+source $HOME/.dotfiles/aliases/shell_colours.sh
 if command -v git &> /dev/null && [ -f "$HOME/.dotfiles/aliases/git_aliases.sh" ]; then
     source "$HOME/.dotfiles/aliases/git_aliases.sh"
 fi
