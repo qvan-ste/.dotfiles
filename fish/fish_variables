@@ -1,9 +1,10 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR EDITOR:vim
-SETUVAR __fish_git_prompt_char_upstream_ahead:\x1b\x5b38\x3b2\x3b137\x3b180\x3b250m\x20\ueaa1
-SETUVAR __fish_git_prompt_char_upstream_behind:\x1b\x5b38\x3b2\x3b243\x3b139\x3b168m\x20\uec1d
-SETUVAR __fish_git_prompt_char_upstream_diverged:\x1b\x5b38\x3b2\x3b137\x3b180\x3b250m\x20\uf47f
+SETUVAR VISUAL:vim
+SETUVAR __fish_git_prompt_char_upstream_ahead:\x1b\x5b38\x3b2\x3b137\x3b180\x3b250m
+SETUVAR __fish_git_prompt_char_upstream_behind:\x1b\x5b38\x3b2\x3b243\x3b139\x3b168m
+SETUVAR __fish_git_prompt_char_upstream_diverged:\x1b\x5b38\x3b2\x3b137\x3b180\x3b250m
 SETUVAR __fish_git_prompt_char_upstream_equal:
 SETUVAR __fish_git_prompt_showupstream:yes
 SETUVAR __fish_initialized:3800
