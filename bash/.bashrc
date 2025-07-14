@@ -1,5 +1,8 @@
 # Append commands to history
 shopt -s histappend
+# Check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
 # Case-insensitive completion
 bind 'set completion-ignore-case on'
 # Show matches immediately
