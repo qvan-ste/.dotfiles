@@ -35,6 +35,6 @@ set termguicolors
 " Syntax highlighting
 syntax enable
 " Colour scheme (only if colors directory exists)
-if isdirectory(expand('~/.vim/colors'))
+if filereadable(expand('~/.vim/colors/catppuccin_mocha.vim'))
     colorscheme catppuccin_mocha
 endif
