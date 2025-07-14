@@ -1,7 +1,7 @@
 " UTF encoding
 set encoding=utf-8
 " Set interface language to English
-language en_US.UTF-8
+language en_US
 " Enable line nubring
 set number
 " Enable line wrapping
