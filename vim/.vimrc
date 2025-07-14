@@ -1,7 +1,11 @@
 " UTF encoding
 set encoding=utf-8
-" Set interface language to English
-language en_US
+" Set interface language to English (if available)
+try
+    language en_US
+catch
+    " Fallback to system default if en_US is not available
+endtry
 " Enable line nubring
 set number
 " Enable line wrapping
