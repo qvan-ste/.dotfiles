@@ -1,5 +1,7 @@
 " UTF encoding
 set encoding=utf-8
+" Set interface language to English
+language en_US.UTF-8
 " Enable line nubring
 set number
 " Enable line wrapping
@@ -32,5 +34,7 @@ set t_Co=256
 set termguicolors
 " Syntax highlighting
 syntax enable
-" Colour scheme
-colorscheme catppuccin_mocha
+" Colour scheme (only if colors directory exists)
+if isdirectory(expand('~/.vim/colors'))
+    colorscheme catppuccin_mocha
+endif

@@ -29,55 +29,26 @@ create_symlink() {
 
 # Only add bash and basic vim settings
 setup_base() {
-    # .vimrc
     create_symlink "$TARGET/vim/.vimrc" "$HOME/.vimrc"
-
-    # .bashrc
     create_symlink "$TARGET/bash/.bashrc" "$HOME/.bashrc"
 }
 
 setup() {
     setup_base
-    # .zshrc
+    create_symlink "$TARGET/vim/.vim" "$HOME/.vim"
     create_symlink "$TARGET/zsh/.zshrc" "$HOME/.zshrc"
-
-    # .tmux.conf
     create_symlink "$TARGET/tmux/.tmux.conf" "$HOME/.tmux.conf"
 
-    # fish config
+    # Make sure config folder is valid
     if [ ! -d "$HOME/.config" ]; then
         echo "Creating .config directory..."
         mkdir -p "$HOME/.config"
     fi
     create_symlink "$TARGET/fish/" "$HOME/.config/fish"
 
-    # Set universal variables for Fish shell using `fish -c`
-    echo "Setting Fish universal variables..."
-
-    # Catpuccin colours
-    fish -c 'set -U red (set_color F38BA8)'
-    fish -c 'set -U blue (set_color 89B4FA)'
-    fish -c 'set -U grey (set_color 7F849C)'
-    fish -c 'set -U dark_grey (set_color 6C6F85)'
-    fish -c 'set -U mauve (set_color CBA6F7)'
-
-    # Prompt settings
-    fish -c 'set -U __fish_git_prompt_showupstream yes'
-    fish -c 'set -U __fish_git_prompt_char_upstream_ahead $blue'
-    fish -c 'set -U __fish_git_prompt_char_upstream_behind $red'
-    fish -c 'set -U __fish_git_prompt_char_upstream_diverged $bluez'
-    fish -c 'set -U __fish_git_prompt_char_upstream_equal ""'
-
-    # Default colours
-    fish -c 'set -U fish_color_command green'
-    fish -c 'set -U fish_color_param normal'
-
-    # Default editor
-    fish -c 'set -U EDITOR vim'
-    fish -c 'set -U VISUAL vim'
-
-    # Fish greeting
-    fish -c 'set -U fish_greeting'
+    # Set universal variables for Fish shell using separate script
+    echo "Setting up Fish universal variables..."
+    fish "$TARGET/fish/setup_fish_vars.fish"
 
 }
 
