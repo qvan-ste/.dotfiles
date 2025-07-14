@@ -1,11 +1,7 @@
 #!/bin/bash
 
-TARGET="$HOME/.dotfiles"
-
-if [ ! -d "$TARGET" ]; then
-    echo "Directory $TARGET does not exist. Creating it now."
-    mkdir -p "$TARGET"
-fi
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+TARGET="$SCRIPT_DIR"
 
 create_symlink() {
     local target_file=$1
@@ -49,6 +45,10 @@ setup() {
     create_symlink "$TARGET/tmux/.tmux.conf" "$HOME/.tmux.conf"
 
     # fish config
+    if [ ! -d "$HOME/.config" ]; then
+        echo "Creating .config directory..."
+        mkdir -p "$HOME/.config"
+    fi
     create_symlink "$TARGET/fish/" "$HOME/.config/fish"
 
     # Set universal variables for Fish shell using `fish -c`
@@ -63,9 +63,9 @@ setup() {
 
     # Prompt settings
     fish -c 'set -U __fish_git_prompt_showupstream yes'
-    fish -c 'set -U __fish_git_prompt_char_upstream_ahead "$blue"'
-    fish -c 'set -U __fish_git_prompt_char_upstream_behind "$red"'
-    fish -c 'set -U __fish_git_prompt_char_upstream_diverged "$blue"'
+    fish -c 'set -U __fish_git_prompt_char_upstream_ahead $blue'
+    fish -c 'set -U __fish_git_prompt_char_upstream_behind $red'
+    fish -c 'set -U __fish_git_prompt_char_upstream_diverged $bluez'
     fish -c 'set -U __fish_git_prompt_char_upstream_equal ""'
 
     # Default colours
