@@ -22,5 +22,3 @@ setopt AUTO_LIST
 setopt LIST_PACKED
 # Prompt settings
 setopt PROMPT_SUBST
-PS1='%F{green}%n@%m%f %F{blue}%~%f
-%F{magenta}%B>%b%f '
