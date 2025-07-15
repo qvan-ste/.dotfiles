@@ -27,7 +27,7 @@ function fish_right_prompt
     if test -n "$right_prompt"
         # Makes it so the right prompt is on top line
         tput sc; tput cuu1; tput cuf 2
-        echo -n $dark_grey $right_prompt '  '
+        echo -n $dark_grey $right_prompt
         tput rc
     end
 end
