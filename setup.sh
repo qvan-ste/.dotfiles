@@ -45,6 +45,7 @@ setup() {
         mkdir -p "$HOME/.config"
     fi
     create_symlink "$TARGET/fish/" "$HOME/.config/fish"
+    create_symlink "$TARGET/bat/" "$HOME/.config/bat"
 
     # Set universal variables for Fish shell using separate script
     echo "Setting up Fish universal variables..."
@@ -53,16 +54,23 @@ setup() {
 }
 
 # Parse command line arguments
+
 BASIC_MODE=false
+INSTALL_DEPS=false
 while [[ $# -gt 0 ]]; do
     case $1 in
         --basic)
             BASIC_MODE=true
             shift
             ;;
+        -d|--deps)
+            INSTALL_DEPS=true
+            shift
+            ;;
         -h|--help)
-            echo "Usage: $0 [--basic] [--help]"
+            echo "Usage: $0 [--basic] [-d|--deps] [--help]"
             echo "  --basic    Set up only basic configuration (vim and bash)"
+            echo "  -d, --deps Install dependencies via Homebrew"
             echo "  --help     Show this help message"
             exit 0
             ;;
@@ -73,6 +81,17 @@ while [[ $# -gt 0 ]]; do
             ;;
     esac
 done
+
+# Function to install dependencies via Homebrew
+install_deps() {
+    echo "Installing dependencies via Homebrew..."
+    brew install fish bat fzf tmux vim
+}
+
+# Run dependency installation if requested
+if [ "$INSTALL_DEPS" = true ]; then
+    install_deps
+fi
 
 # Installs a minimal version for use on servers
 if [ "$BASIC_MODE" = true ]; then
@@ -97,7 +116,7 @@ if [ "$BASIC_MODE" = true ]; then
 else
     # Check requirements
     if ! command -v fish &>/dev/null; then
-        echo "Error: fish shell is not installed. Please install it first."
+        echo "Error: fish shell is not installed. Please install it first or run this with the -d flag"
         exit 1
     fi
     echo "Running full setup..."

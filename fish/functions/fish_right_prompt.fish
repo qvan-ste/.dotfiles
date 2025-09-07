@@ -10,7 +10,7 @@ function fish_right_prompt
                     set -l distro (lsb_release -i | cut -f2)
                     switch $distro
                         case Ubuntu
-                            set icon '' 
+                            set icon ''
                         case Debian
                             set icon ''
                         case '*'
