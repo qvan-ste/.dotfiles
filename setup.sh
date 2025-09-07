@@ -84,8 +84,8 @@ done
 
 # Function to install dependencies via Homebrew
 install_deps() {
-    echo "Installing dependencies via Homebrew..."
-    brew install fish bat fzf tmux vim
+    echo "Installing dependencies and useful tools via Homebrew..."
+    brew install fish bat fzf tmux vim fd thefuck
 }
 
 # Run dependency installation if requested
